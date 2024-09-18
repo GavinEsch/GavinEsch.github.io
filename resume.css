@@ -1,5 +1,12 @@
 /* Resume Page Styles (resume.css) */
 
+/* Container: Adds space on either side of the content */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 /* Resume Section */
 .resume-section {
     padding: 60px 0;
@@ -70,4 +77,11 @@
 
 .button:hover {
     background-color: #005bb5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-list {
+        flex-direction: column;
+    }
 }
