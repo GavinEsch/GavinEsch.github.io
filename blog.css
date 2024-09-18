@@ -1,0 +1,51 @@
+/* Blog Page Styles (blog.css) */
+
+/* Blog Section */
+.blog-section {
+    padding: 60px 0;
+    background-color: #f4f4f9;
+}
+
+.blog-post {
+    margin-bottom: 40px;
+}
+
+.blog-post h2 {
+    font-size: 1.8rem;
+    color: #0073e6;
+}
+
+.blog-post p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.post-date {
+    font-style: italic;
+    color: #999;
+}
+
+.read-more {
+    display: inline-block;
+    background-color: #0073e6;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    background-color: #005bb5;
+}
+
+/* Post Content */
+.post-content {
+    padding: 60px 0;
+}
+
+.post-content p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.8;
+}

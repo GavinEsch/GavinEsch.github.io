@@ -1,0 +1,59 @@
+/* Home Page Styles (home.css) */
+
+/* Intro Section */
+.intro {
+    background-color: #f4f4f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Highlights Section */
+.highlights {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.highlight-box {
+    width: 30%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.highlight-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.highlight-box p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: #005bb5;
+}
