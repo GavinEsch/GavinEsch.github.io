@@ -1,61 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gavin's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="home.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ site.title }}</title>
+  <!-- Tailwind CSS CDN for rapid prototyping -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Gavin's Portfolio</h1>
-            <p>Your gateway to my code, projects, photography, and more.</p>
-            <nav>
-                <a href="projects.html">Projects</a>
-                <a href="photography.html">Photography</a>
-                <a href="resume.html">Resume</a>
-                <a href="blog.html">Blog</a>
-            </nav>
-        </div>
-    </header>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Header & Navigation -->
+  <header class="bg-white shadow fixed w-full z-10">
+    <nav class="container mx-auto flex items-center justify-between p-4">
+      <a href="#home" class="text-xl font-bold">{{ site.title }}</a>
+      <ul class="flex space-x-4">
+        <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="#resume" class="hover:text-blue-500">Resume</a></li>
+        <li><a href="#blog" class="hover:text-blue-500">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section class="intro">
-        <div class="container">
-            <h2>Welcome to My Digital Space</h2>
-            <p>
-                Hi, I’m Gavin, a passionate Senior studying Cybersecurity with hands-on experience in ethical hacking and IT security analysis. 
-                Explore my work below!
-            </p>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section id="home" class="hero bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url('assets/images/hero-bg.jpg');">
+    <div class="text-center text-white p-4 bg-black bg-opacity-50 rounded">
+      <h1 class="text-5xl font-bold mb-4">Welcome to My World</h1>
+      <p class="text-xl mb-8">Discover my projects, experience, and thoughts.</p>
+      <a href="#projects" class="px-6 py-3 bg-blue-600 rounded hover:bg-blue-700">Explore</a>
+    </div>
+  </section>
 
-    <section class="highlights">
-        <div class="container">
-            <div class="highlight-box">
-                <h3>Projects</h3>
-                <p>Check out my recent coding projects on GitHub, where I explore ethical hacking, automation, and more.</p>
-                <a href="projects.html" class="button">Explore Projects</a>
-            </div>
-            <div class="highlight-box">
-                <h3>Photography</h3>
-                <p>View my collection of curated photography, capturing unique perspectives and moments.</p>
-                <a href="photography.html" class="button">View Gallery</a>
-            </div>
-            <div class="highlight-box">
-                <h3>Resume</h3>
-                <p>Take a look at my professional background, skills, and the projects I've worked on.</p>
-                <a href="resume.html" class="button">View Resume</a>
-            </div>
-        </div>
-    </section>
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12">Notable Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Repeat for each project -->
+      <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold mb-2">Project Title</h3>
+        <p class="mb-4">A brief description of the project goes here.</p>
+        <a href="#" class="text-blue-600 hover:underline">Learn More</a>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Gavin's Portfolio | <a href="mailto:your-email@example.com">Contact Me</a></p>
-        </div>
-    </footer>
+  <!-- Resume Section -->
+  <section id="resume" class="py-20 bg-gray-200">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Resume</h2>
+      <div class="max-w-3xl mx-auto p-6 bg-white rounded shadow">
+        <p>This section provides an overview of my professional experience, education, and skills.</p>
+        <a href="resume.pdf" class="mt-4 inline-block text-blue-600 hover:underline">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="py-20 container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12">Blog</h2>
+    <div class="space-y-8">
+      {% for post in site.posts %}
+      <article class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+        <h3 class="text-2xl font-semibold"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p class="text-gray-600 text-sm">{{ post.date | date: "%B %d, %Y" }}</p>
+        <p class="mt-4">{{ post.excerpt }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-white shadow">
+    <div class="container mx-auto text-center">
+      <p>&copy; {{ "now" | date: "%Y" }} Your Name. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>

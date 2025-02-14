@@ -1,0 +1,4 @@
+title: "Your Name | Portfolio"
+description: "Notable projects, resume, and blog by Your Name"
+baseurl: "" # Leave empty for a user site
+theme: minima
